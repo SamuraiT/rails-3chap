@@ -17,7 +17,7 @@ development:
 test:
   adapter: postgresql
   endcoding: unicode
-  database: rails
+  database: rails-test
   pool: 5
   username: tatsuro-y
   password:
