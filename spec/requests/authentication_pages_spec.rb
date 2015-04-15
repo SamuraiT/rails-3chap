@@ -54,6 +54,18 @@ describe "AuthenticationPages" do
         end
       end
 
+      describe "when attempting to visit user#create or new page after sign in" do
+        before { sign_in user, no_capybara: true }
+        describe "visit User#new" do
+          before { get '/signup' }
+          specify { expect(response).to redirect_to(root_path) }
+        end
+        describe "visit user#create" do
+          before { post users_path }
+          specify { expect(response).to redirect_to(root_path) }
+        end
+      end
+
       describe "in the User controller" do
 
         describe "visiting the user index" do

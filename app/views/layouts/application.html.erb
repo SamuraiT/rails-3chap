@@ -17,6 +17,8 @@
     <%= render 'layouts/footer' %>
     <% if Rails.env.development? %>
       <%= debug(params)  %>
+
+      <%= debug(request.method.inspect)%>
       <%= debug(session.inspect) %>
     <% end %>
   </div>
